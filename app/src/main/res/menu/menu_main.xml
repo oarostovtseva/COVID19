@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+            android:id="@+id/action_plots"
+            android:title="@string/plots_menu"
+            app:showAsAction="never" />
+    <item
+            android:id="@+id/action_world"
+            android:title="@string/world_menu"
+            app:showAsAction="never" />
+
+</menu>

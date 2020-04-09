@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Covid-19</string>
+    <string name="total_confirmed">Total Confirmed</string>
+    <string name="total_deaths">Total Deaths</string>
+    <string name="total_recovered">Total Recovered</string>
+
+    <string name="plots_menu">Plots</string>
+    <string name="world_menu">World</string>
+
+    <string name="world_title">Confirmed per Country/Region</string>
+</resources>
