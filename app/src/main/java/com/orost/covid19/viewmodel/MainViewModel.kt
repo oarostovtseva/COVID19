@@ -4,7 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.orost.covid19.api.ApiService
-import com.orost.covid19.model.GlobalLatest
+import com.orost.covid19.model.GlobalStatistic
 import com.orost.covid19.utils.CoroutineContextProvider
 import kotlinx.coroutines.launch
 import timber.log.Timber
@@ -15,7 +15,7 @@ class MainViewModel(
 ) : ViewModel() {
 
     val globalLatestLiveData by lazy {
-        val liveData = MutableLiveData<GlobalLatest>()
+        val liveData = MutableLiveData<GlobalStatistic>()
         fetchGlobalLatestStatistics()
         return@lazy liveData
     }
@@ -27,7 +27,7 @@ class MainViewModel(
     private fun fetchGlobalLatestStatistics() {
         viewModelScope.launch(coroutineContextProvider.io) {
             try {
-                globalLatestLiveData.postValue(apiService.getGlobalLatest())
+                globalLatestLiveData.postValue(apiService.getGlobal())
             } catch (e: Exception) {
                 Timber.e(e, "Error while fetching statistics")
             }

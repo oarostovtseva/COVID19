@@ -29,8 +29,15 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onOptionsItemSelected(item: MenuItem) = when (item.itemId) {
+        R.id.action_home -> {
+            supportFragmentManager.addToBackStack(
+                R.id.fragment_container,
+                get<HomeFragment>()
+            )
+            true
+        }
         R.id.action_plots -> {
-            supportFragmentManager.replaceWithBackStack(
+            supportFragmentManager.addToBackStack(
                 R.id.fragment_container,
                 get<WorldFragment>()
             )
@@ -38,7 +45,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         R.id.action_world -> {
-            supportFragmentManager.replaceWithBackStack(
+            supportFragmentManager.addToBackStack(
                 R.id.fragment_container,
                 get<WorldFragment>()
             )
