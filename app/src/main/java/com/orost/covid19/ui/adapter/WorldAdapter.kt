@@ -5,8 +5,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.orost.covid19.R
 import com.orost.covid19.model.Statistics
 import com.orost.covid19.utils.addSpacesToNumberText
+import com.orost.covid19.utils.localeCountryISOMap
 import inflate
 import kotlinx.android.synthetic.main.item_country.view.*
+import java.util.*
 
 internal class WorldAdapter() : RecyclerView.Adapter<WorldAdapter.ItemViewHolder>() {
 
@@ -29,7 +31,7 @@ internal class WorldAdapter() : RecyclerView.Adapter<WorldAdapter.ItemViewHolder
     inner class ItemViewHolder(parent: ViewGroup) :
         RecyclerView.ViewHolder(parent.inflate(R.layout.item_country)) {
         fun bind(item: CountryStatisticsItem) {
-            itemView.country_name.text = item.country
+            itemView.country_name.text = localeCountryISOMap[item.country]?.displayCountry
             itemView.total_in_country.text = item.statistic.confirmed.toString().addSpacesToNumberText()
         }
     }
