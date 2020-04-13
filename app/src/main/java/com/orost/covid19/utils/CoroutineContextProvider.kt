@@ -8,7 +8,6 @@ open class CoroutineContextProvider {
     open val io: CoroutineDispatcher = Dispatchers.IO
 }
 
-@Suppress("EXPERIMENTAL_API_USAGE")
 class TestContextProvider : CoroutineContextProvider() {
     override val main = Dispatchers.Unconfined
     override val io = Dispatchers.Unconfined

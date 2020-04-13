@@ -1,6 +1,5 @@
 package com.orost.covid19.utils
 
-
 fun String.addSpacesToNumberText(): String {
     val chars = this.toCharArray()
     val sb = StringBuilder()

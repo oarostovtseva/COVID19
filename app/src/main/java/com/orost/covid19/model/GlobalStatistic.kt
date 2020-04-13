@@ -6,10 +6,16 @@ data class GlobalStatistic(
     val result: Statistics
 )
 
-data class GlobalLatestByCountry(
+data class GlobalByCountry(
     val count: Int,
     val date: String,
     val result: List<Map<String, Statistics>>
+)
+
+data class GlobalByDate(
+    val count: Int,
+    val date: String,
+    val result: Map<String, Statistics>
 )
 
 data class Statistics(

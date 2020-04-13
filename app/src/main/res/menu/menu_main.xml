@@ -2,7 +2,7 @@
         xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
             android:id="@+id/action_home"
-            android:title="@string/plots_home"
+            android:title="@string/home_menu"
             app:showAsAction="never" />
     <item
             android:id="@+id/action_world"
@@ -10,8 +10,8 @@
             app:showAsAction="never" />
 
     <item
-            android:id="@+id/action_plots"
-            android:title="@string/plots_menu"
+            android:id="@+id/action_chart"
+            android:title="@string/chart_menu"
             app:showAsAction="never" />
 
 </menu>

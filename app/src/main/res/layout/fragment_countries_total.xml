@@ -15,7 +15,7 @@
             android:paddingBottom="16dp"
             android:text="@string/world_title"
             android:textSize="24sp"
-            android:textColor="@android:color/holo_red_dark"
+            android:textColor="@color/white80"
             app:layout_constraintTop_toTopOf="parent" />
 
     <androidx.recyclerview.widget.RecyclerView

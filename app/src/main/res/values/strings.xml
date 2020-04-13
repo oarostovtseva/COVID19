@@ -4,9 +4,11 @@
     <string name="total_deaths">Total Deaths</string>
     <string name="total_recovered">Total Recovered</string>
 
-    <string name="plots_home">Total</string>
-    <string name="plots_menu">Plots</string>
-    <string name="world_menu">World</string>
+    <string name="home_menu">Total</string>
+    <string name="world_menu">By Countries</string>
+    <string name="chart_menu">Charts</string>
 
     <string name="world_title">Confirmed per Country/Region</string>
+    <string name="line_chart_legend">Total confirmed COVID-19 cases per day</string>
+    <string name="bar_chart_legend">Total increase of confirmed COVID-19 cases per day</string>
 </resources>

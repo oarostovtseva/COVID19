@@ -44,4 +44,5 @@ dependencies {
     implementation Networking.okhttp_logging_interceptor
 
     implementation Timber.timber
+    implementation MPChart.mp_chart
 }

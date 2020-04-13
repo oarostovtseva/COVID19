@@ -1,11 +1,13 @@
 package com.orost.covid19.di
 
 import com.orost.covid19.api.ApiService
+import com.orost.covid19.ui.ChartFragment
 import com.orost.covid19.ui.HomeFragment
-import com.orost.covid19.ui.WorldFragment
+import com.orost.covid19.ui.CountryFragment
 import com.orost.covid19.utils.CoroutineContextProvider
+import com.orost.covid19.viewmodel.ChartViewModel
+import com.orost.covid19.viewmodel.CountriesViewModel
 import com.orost.covid19.viewmodel.MainViewModel
-import com.orost.covid19.viewmodel.WorldViewModel
 import com.squareup.moshi.Moshi
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -23,10 +25,12 @@ val appModule = module {
     single { CoroutineContextProvider() }
 
     factory { HomeFragment() }
-    factory { WorldFragment() }
+    factory { CountryFragment() }
+    factory { ChartFragment() }
 
     viewModel { MainViewModel(get(), get()) }
-    viewModel { WorldViewModel(get(), get()) }
+    viewModel { CountriesViewModel(get(), get()) }
+    viewModel { ChartViewModel(get(), get()) }
 
 }
 

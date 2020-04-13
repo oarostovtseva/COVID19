@@ -4,28 +4,27 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.orost.covid19.api.ApiService
-import com.orost.covid19.model.GlobalStatistic
+import com.orost.covid19.model.GlobalByCountry
 import com.orost.covid19.utils.CoroutineContextProvider
 import kotlinx.coroutines.launch
 import timber.log.Timber
 
-class MainViewModel(
+class CountriesViewModel(
     private val apiService: ApiService,
     private val coroutineContextProvider: CoroutineContextProvider
 ) : ViewModel() {
-
-    val globalLatestLiveData by lazy {
-        val liveData = MutableLiveData<GlobalStatistic>()
-        fetchGlobalLatestStatistics()
+    val worldStatistic by lazy {
+        val liveData = MutableLiveData<GlobalByCountry>()
+        fetchCountryStatistics()
         return@lazy liveData
     }
 
-    private fun fetchGlobalLatestStatistics() {
+    private fun fetchCountryStatistics() {
         viewModelScope.launch(coroutineContextProvider.io) {
             try {
-                globalLatestLiveData.postValue(apiService.getGlobal())
+                worldStatistic.postValue(apiService.getGlobalByCountry())
             } catch (e: Exception) {
-                Timber.e(e, "Error while fetching statistics")
+                Timber.e(e, "Error while fetching statistics by country")
             }
         }
     }

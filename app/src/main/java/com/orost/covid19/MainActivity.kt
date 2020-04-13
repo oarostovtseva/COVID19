@@ -5,9 +5,9 @@ import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import com.orost.covid19.ui.HomeFragment
-import com.orost.covid19.ui.WorldFragment
+import com.orost.covid19.ui.ChartFragment
+import com.orost.covid19.ui.CountryFragment
 import com.orost.covid19.utils.addToBackStack
-import com.orost.covid19.utils.replaceWithBackStack
 import kotlinx.android.synthetic.main.activity_main.*
 import org.koin.android.ext.android.get
 
@@ -36,10 +36,10 @@ class MainActivity : AppCompatActivity() {
             )
             true
         }
-        R.id.action_plots -> {
+        R.id.action_chart -> {
             supportFragmentManager.addToBackStack(
                 R.id.fragment_container,
-                get<WorldFragment>()
+                get<ChartFragment>()
             )
             true
         }
@@ -47,7 +47,7 @@ class MainActivity : AppCompatActivity() {
         R.id.action_world -> {
             supportFragmentManager.addToBackStack(
                 R.id.fragment_container,
-                get<WorldFragment>()
+                get<CountryFragment>()
             )
             true
         }

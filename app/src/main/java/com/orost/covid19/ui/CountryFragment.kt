@@ -1,6 +1,5 @@
 package com.orost.covid19.ui
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,33 +7,23 @@ import android.view.ViewGroup
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.orost.covid19.R
+import com.orost.covid19.ui.adapter.CountryAdapter
 import com.orost.covid19.ui.adapter.CountryStatisticsItem
-import com.orost.covid19.ui.adapter.WorldAdapter
-import com.orost.covid19.viewmodel.WorldViewModel
-import kotlinx.android.synthetic.main.fragment_world.*
+import com.orost.covid19.viewmodel.CountriesViewModel
+import kotlinx.android.synthetic.main.fragment_countries_total.*
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class WorldFragment : BaseFragment() {
+class CountryFragment : BaseFragment() {
 
-    private val viewModel: WorldViewModel by viewModel()
-    private val worldAdapter = WorldAdapter()
-
-    override fun onAttach(context: Context) {
-        super.onAttach(context)
-        activity?.actionBar?.setDisplayHomeAsUpEnabled(true)
-    }
+    private val viewModel: CountriesViewModel by viewModel()
+    private val worldAdapter = CountryAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        return inflater.inflate(R.layout.fragment_world, container, false)
-    }
-
-    override fun onDestroyView() {
-        super.onDestroyView()
-        activity?.actionBar?.setDisplayHomeAsUpEnabled(false)
+        return inflater.inflate(R.layout.fragment_countries_total, container, false)
     }
 
     override fun initUI(savedInstanceState: Bundle?) {

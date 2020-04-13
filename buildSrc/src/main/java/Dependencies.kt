@@ -79,3 +79,9 @@ object Timber {
     const val timber = "com.jakewharton.timber:timber:$timber_version"
 }
 
+object MPChart {
+    private const val mp_chart_version = "v3.1.0"
+
+    const val mp_chart = "com.github.PhilJay:MPAndroidChart:$mp_chart_version"
+}
+

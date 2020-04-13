@@ -1,7 +1,8 @@
 package com.orost.covid19.api
 
+import com.orost.covid19.model.GlobalByCountry
+import com.orost.covid19.model.GlobalByDate
 import com.orost.covid19.model.GlobalStatistic
-import com.orost.covid19.model.GlobalLatestByCountry
 import retrofit2.http.GET
 
 interface ApiService {
@@ -10,5 +11,8 @@ interface ApiService {
     suspend fun getGlobal(): GlobalStatistic
 
     @GET("global/latest")
-    suspend fun getGlobalLatest(): GlobalLatestByCountry
+    suspend fun getGlobalByCountry(): GlobalByCountry
+
+    @GET("global/count")
+    suspend fun getGlobalByDate(): GlobalByDate
 }
